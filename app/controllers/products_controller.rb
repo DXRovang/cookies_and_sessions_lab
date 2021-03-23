@@ -1,15 +1,14 @@
 class ProductsController < ApplicationController
-  def add_to_cart
-    @item = Item.find_by(id: params[:id])
-    cart << @item
-  end
 
   def index
-
+    
   end
 
   def add
-
+    item = params[:product]
+    cart << item
+    redirect_to controller: 'products', action: 'index'
   end
 end
+
 
